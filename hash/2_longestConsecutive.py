@@ -17,13 +17,16 @@ class Solution(object):
         max_count = 0
 
         for num in seen:
-            cur_num = num
-            cur_count = 1
+            if num - 1 not in seen:
+                # 注意这个条件，如果没有这个条件会报错（时间超限）
+                # 这个条件的含义：只从连续序列的起点开始数
+                cur_num = num
+                cur_count = 1
 
-            while cur_num + 1 in seen:
-                cur_count +=1
-                cur_num +=1
-            max_count = max(cur_count ,max_count)
+                while cur_num + 1 in seen:
+                    cur_count +=1
+                    cur_num +=1
+                max_count = max(cur_count ,max_count)
 
         return max_count
 

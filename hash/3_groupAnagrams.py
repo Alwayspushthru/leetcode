@@ -19,7 +19,7 @@ class Solution(object):
             key = ''.join(sorted(s))
             # sorted 得到字符列表 
             if key not in hashmap:
-                hashmap[key] = []
+                hashmap[key] = [] # 把key对应的初始化为[]列表
             hashmap[key].append(s)
         return list(hashmap.values())
 
